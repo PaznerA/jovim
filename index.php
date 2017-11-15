@@ -4,7 +4,7 @@
 define("ACTION", "import");
 define("SUB_ACTION", "sperky");
 
-require_once "src/config.php";
+require_once "src/config/config.php";
 
 require_once "src/Vmprim.php";
 require_once "src/Product.php";
