@@ -12,6 +12,9 @@ use vmprim\src\Vmprim;
 
 class Media extends Vmprim
 {
+    public $virtuemart_product_id;
+    public $virtuemart_media_id;
+    public $ordering;
     public function __construct($dbPrefix, $sourceString = "")
     {
         parent::__construct($dbPrefix, $sourceString);

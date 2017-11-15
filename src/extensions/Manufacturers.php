@@ -12,6 +12,9 @@ use vmprim\src\Vmprim;
 
 class Manufacturers extends Vmprim
 {
+    public $virtuemart_product_id;
+    public $virtuemart_manufacturer_id;
+
     public function __construct($dbPrefix, $sourceString = "")
     {
         parent::__construct($dbPrefix, $sourceString);
