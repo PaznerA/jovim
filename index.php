@@ -15,9 +15,10 @@ use vmprim\src as VirtuemartProductImporter;
 
 $db_prefix = "g9rqb_";
 
+//TEMPORARY DATA
+$params=new \stdClass();
 
 $productHandler     = new VirtuemartProductImporter\Product($config["dbPrefix"]);
-$paramHandler       = new VirtuemartProductImporter\Customfields($config["dbPrefix"]);
-$categoryHandler    = new VirtuemartProductImporter\Category($config["dbPrefix"]);
+$productHandler->addCustomfield($params);
 
 echo("APP RUNNING");
