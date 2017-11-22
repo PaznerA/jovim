@@ -1,2 +1,0 @@
-# vmprim
-Virtuemart Product Importer

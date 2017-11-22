@@ -3,18 +3,17 @@
  * Created by PhpStorm.
  * User: admin
  * Date: 15.11.2017
- * Time: 20:55
+ * Time: 21:31
  */
 
 namespace vmprim\src\extensions;
 
-use vmprim\src\Vmprim;
+use vmprim\src\Jovim;
 
-class Categories extends Vmprim
+class ProductShoppergroup extends Jovim
 {
     public $virtuemart_product_id;
-    public $virtuemart_category_id;
-    public $ordering;
+    public $virtuemart_shoppergroup_id;
 
     public function __construct($dbPrefix, $sourceString = "")
     {

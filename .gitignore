@@ -1,1 +1,4 @@
+index.php
 src/config/config-override.php
+vendor
+feed

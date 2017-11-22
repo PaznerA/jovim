@@ -1,17 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 15.11.2017
- * Time: 21:29
- */
 
 namespace vmprim\src\extensions;
 
-use vmprim\src\Vmprim;
+//use jovim\src\Product;
 
-class Prices
+class ProductPrice
 {
+
+    private $date;
     public $virtuemart_product_id;
     public $virtuemart_shoppergroup_id=0;
     public $product_price=0;
@@ -31,7 +27,31 @@ class Prices
     public $locked_on;
     public $locked_by;
 
-    public function __construct($data)
+    public function __construct()
+    {
+        $this->date=new \DateTime();
+        $this->virtuemart_product_id        =0;
+        $this->virtuemart_shoppergroup_id   =0;
+        $this->product_price                =0;
+        $this->override                     =0;
+        $this->product_override_price       =0;
+        $this->product_tax_id               =0;
+        $this->product_discount_id          =0;
+        $this->product_currency             =33;
+        $this->product_price_publish_up     ="0000-00-00 00:00:00";
+        $this->product_price_publish_down   ="0000-00-00 00:00:00";
+        $this->price_quantity_start         =0;
+        $this->price_quantity_end           =0;
+        $this->created_on                   =$this->date->format("Y-m-d H:i:s");
+        $this->created_by                   =1;
+        $this->modified_on                  =$this->date->format("Y-m-d H:i:s");
+        $this->modified_by                  =1;
+        $this->locked_on                    =$this->date->format("Y-m-d H:i:s");
+        $this->locked_by                    =1;
+
+    }
+
+    public function setData($data)
     {
         $this->virtuemart_product_id        =$data->virtuemart_product_id;
         $this->virtuemart_shoppergroup_id   =$data->virtuemart_shoppergroup_id;
@@ -51,6 +71,7 @@ class Prices
         $this->modified_by                  =$data->modified_by;
         $this->locked_on                    =$data->locked_on;
         $this->locked_by                    =$data->locked_by;
+        return $this;
     }
 
 }

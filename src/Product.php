@@ -8,26 +8,38 @@
 
 namespace vmprim\src;
 
-use vmprim\src\extensions\Prices as Price;
+use vmprim\src\extensions;
 
-class Product extends Vmprim
+class Product
 {
-    private $customfieldsList;
-    private $categoriesList;
-    private $manufacturersList;
-    private $pricesList;
-    private $mediaList;
+    private $priceClass;
+    private $customfieldClass;
+    private $manufacturerClass;
+    private $categoryClass;
 
-    public function __construct($dbPrefix, $sourceString = "")
+    public $basicData;
+    public $customfieldsList=[];
+    public $categoriesList=[];
+    public $manufacturersList=[];
+    public $pricesList=[];
+    public $mediaList=[];
+
+    public function __construct()
     {
-        parent::__construct($dbPrefix, $sourceString);
+//        $this->basicData=new \stdClass();
+//        $this->priceClass=new extensions\ProductPrice();
+//        $this->customfieldClass=new extensions\ProductCustomfield();
+//        $this->manufacturerClass=new extensions\ProductManufacturer();
+//        $this->categoryClass=new extensions\ProductCategory();
     }
 
 
-    public function addCustomfield($data){
-        $field=new Price($data);
-        $this->pricesList[]=$field;
+    public function addPrice($data){
+//        $price=$this->priceClass->setData($data);
+//        $this->pricesList[]=$price;
+
     }
+
 
 
 }
