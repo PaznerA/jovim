@@ -1,4 +1,5 @@
 index.php
-src/config/config-override.php
+src/config/config-dev.php
+src/config/config-prod.php
 vendor
 feed
