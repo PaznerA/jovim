@@ -1,4 +1,3 @@
-index.php
 src/config/config-dev.php
 src/config/config-prod.php
 vendor

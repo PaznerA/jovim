@@ -26,7 +26,7 @@ class Product
 
     public function __construct()
     {
-//        $this->basicData=new \stdClass();
+        $this->basicData=new \stdClass();
 //        $this->priceClass=new extensions\ProductPrice();
 //        $this->customfieldClass=new extensions\ProductCustomfield();
 //        $this->manufacturerClass=new extensions\ProductManufacturer();

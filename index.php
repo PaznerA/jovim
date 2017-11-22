@@ -44,32 +44,12 @@ echo(time() . ' | JOB STARTED'.'<br>');
 
 
 //DEBUG
-$dataHandler->adapter->printData();
-
-
-
-
-
-
+//$dataHandler->adapter->printData();
 
 
 
 //RUN AUTOMATICALLY BY ADAPTER CLASS
-$adapter->routine();
+$dataHandler->adapter->routine();
 
-
-
-
-
-
-
-/*
- * OR YOUR OWN ROUTINE WITHOUT NEW CLASS CREATION
- */
-/*
-while ($product=$adapter->getNextProduct()){
-    $adapter->printData($product);
-}
-*/
 
 echo(time() . ' | JOB FINISHED');
