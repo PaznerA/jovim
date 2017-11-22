@@ -19,23 +19,6 @@ define("APP_URL", "http://my.git/vmImporter/jovim");
 define("APP_PATH", $_SERVER["DOCUMENT_ROOT"].DS.'vmImporter'.DS.'jovim');
 define("DATA_PATH", APP_PATH.DS."feed");
 
-/*
- *
- * when working with auto redirect into root index
- *
-
-
-$req_array = explode("/", str_replace(APP_URL,'',$_SERVER["REQUEST_URI"]));
-if(isset($req_array[1]) && strlen($req_array[1]) > 1){
-    define("FEED_NAME", $req_array[1]);
-    if(isset($req_array[2]) && strlen($req_array[2]) > 1){
-        if($req_array[2]=="1" || $req_array[2]=="true" || $req_array[2]=="multilang"){
-            define("FEED_MULTILANG", true);
-        }
-    }
-}
-
-*/
 
 
 // MINI ROUTER AND CONSTANTS SETTER
@@ -53,39 +36,15 @@ if(isset($_GET['f']) && strlen($_GET['f']) > 1){
     }
 }
 
-
-
-
-// SET ADAPTER BY FEED NAME
-switch (FEED_NAME){
-    case "parfemy":
-        $adapter = new\vmprim\src\connectors\xml_vivantis_parfemy\Adapter($db_connection);
-        $feedPath=DATA_PATH.DS."feed-parfemy.xml";
-    break;
-
-    case "sperky":
-        $adapter = new\vmprim\src\connectors\xml_vivantis_sperky\Adapter($db_connection);
-        $feedPath=DATA_PATH.DS."feed-sperky.xml";
-        break;
-
-    default: error_log("Cannot find feed data!",E_USER_ERROR);
-}
-
-//var_dump($feedPath,$adapter); die();
-
 //INITIALIZE DATA HANDLERS
-$dataHandler = new \vmprim\src\connectors\XmlHandler($adapter,$feedPath);
-
-
+$dataHandler = new \vmprim\src\connectors\Handler($db_connection);
 
 
 echo(time() . ' | JOB STARTED'.'<br>');
 
 
-
-
 //DEBUG
-$adapter->printData();
+$dataHandler->adapter->printData();
 
 
 
